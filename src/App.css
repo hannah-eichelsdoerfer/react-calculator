@@ -1,44 +1,6 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 * {
-  /* font-family: "Quicksand", sans-serif; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
   background: linear-gradient(to right bottom, #f4e2d8, #ba5370);
   color: white;
 }
@@ -62,8 +25,8 @@ body {
 
 .calculator {
   display: grid;
-  grid-template-columns: repeat(4, 6rem);
-  grid-template-rows: minmax(6rem, auto) repeat(5, 6rem);
+  grid-template-columns: repeat(4, 5rem);
+  grid-template-rows: minmax(5rem, auto) repeat(5, 5rem);
   justify-content: center;
   gap: 0.5rem;
   padding: 0 0.5rem 0.5rem 0.5rem;
@@ -71,8 +34,9 @@ body {
 
 .display {
   font-size: 3rem;
-  grid-column: span 4;
-  padding: 2rem;
+  grid-column: 1 / -1;
+  /* grid-column: span 4; */
+  padding: 1.5rem;
   text-align: right;
   align-self: center;
   word-wrap: break-word;
@@ -104,6 +68,7 @@ button:active {
   background: unset;
   /* background: rgba(229, 173, 173, 0.1); */
   /* color: #192f00; */
-  font-size: 24px;
+  transform: scale(1.2);
+  color: whitesmoke;
   font-weight: 500;
 }
