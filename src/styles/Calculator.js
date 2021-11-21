@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Calculator = styled.div`
+export const StyledCalculator = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 5rem);
   grid-template-rows: minmax(5rem, auto) repeat(5, 5rem);
