@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Calculator } from "./styles/Calculator";
 
 const operators = ["/", "*", "-", "+"];
 
@@ -47,38 +48,36 @@ function App() {
     }
   };
   const zeroCheck = (e) => {
-    if (lastDigits.slice(-1) !== "0" || lastDigits.includes(".")) {
+    if (lastDigits[0] !== "0" || lastDigits.includes(".")) {
       setDisplay(display + e.target.innerText);
     }
   };
 
   return (
-    <div className="container">
-      <div className="calculator">
-        <div className="display">{display === "" ? 0 : display}</div>
-        <button onClick={clear}>C</button>
-        <button onClick={deleteLast}>⬅</button>
-        <button onClick={percentage}>%</button>
-        <button onClick={handleClickOperator}>/</button>
-        <button onClick={handleClick}>7</button>
-        <button onClick={handleClick}>8</button>
-        <button onClick={handleClick}>9</button>
-        <button onClick={handleClickOperator}>*</button>
-        <button onClick={handleClick}>4</button>
-        <button onClick={handleClick}>5</button>
-        <button onClick={handleClick}>6</button>
-        <button onClick={handleClickOperator}>-</button>
-        <button onClick={handleClick}>1</button>
-        <button onClick={handleClick}>2</button>
-        <button onClick={handleClick}>3</button>
-        <button onClick={handleClickOperator}>+</button>
-        <button onClick={zeroCheck} className="span-two">
-          0
-        </button>
-        <button onClick={decimalSeperator}>.</button>
-        <button onClick={calculate}>=</button>
-      </div>
-    </div>
+    <Calculator>
+      <div className="display">{display === "" ? 0 : display}</div>
+      <button onClick={clear}>C</button>
+      <button onClick={deleteLast}>⬅</button>
+      <button onClick={percentage}>%</button>
+      <button onClick={handleClickOperator}>/</button>
+      <button onClick={handleClick}>7</button>
+      <button onClick={handleClick}>8</button>
+      <button onClick={handleClick}>9</button>
+      <button onClick={handleClickOperator}>*</button>
+      <button onClick={handleClick}>4</button>
+      <button onClick={handleClick}>5</button>
+      <button onClick={handleClick}>6</button>
+      <button onClick={handleClickOperator}>-</button>
+      <button onClick={handleClick}>1</button>
+      <button onClick={handleClick}>2</button>
+      <button onClick={handleClick}>3</button>
+      <button onClick={handleClickOperator}>+</button>
+      <button onClick={zeroCheck} className="span-two">
+        0
+      </button>
+      <button onClick={decimalSeperator}>.</button>
+      <button onClick={calculate}>=</button>
+    </Calculator>
   );
 }
 
